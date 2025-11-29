@@ -1,5 +1,6 @@
 import { TCMSPage } from "@/types/cms/page";
 import { TCMSProfile } from "@/types/cms/profile";
+import FeaturedProjects from "./featured-projects";
 import GithubActivity from "./github-activity";
 import HeroSection from "./hero-section";
 import PinnedArticle from "./pinned-article";
@@ -25,7 +26,10 @@ const HomeView = (props: Props) => {
         <div>
           <RecentActivity product={profile.ongoingProduct} />
         </div>
-        <div className="order-1 md:order-0">
+        <div className="md:col-span-3">
+          <FeaturedProjects />
+        </div>
+        <div>
           <PinnedArticle />
         </div>
         <div className="md:col-span-2">

@@ -19,6 +19,7 @@ const StackItemCard = (props: Props) => {
           width={20}
           height={20}
           className="md:!size-7"
+          unoptimized
         />
       </div>
       <section>

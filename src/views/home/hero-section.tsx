@@ -1,25 +1,15 @@
 import { getIcon } from "@/common/icons";
 import { Button } from "@/components/ui/button";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Props } from ".";
 
 const HeroSection = async (props: Props) => {
   const { page, profile } = props;
-  const { avatar, socials, callToActions } = profile;
+  const { socials, callToActions } = profile;
 
   return (
     <section className="container pb-24">
-      {avatar && (
-        <Image
-          src={avatar.url}
-          alt={avatar?.alt || profile?.name}
-          width={100}
-          height={100}
-          className="mb-7 rounded-full"
-        />
-      )}
       <h1 className="text-3xl sm:text-4xl font-bold mb-2 font-heading">
         {page.title}
       </h1>

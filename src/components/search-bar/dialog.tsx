@@ -56,7 +56,7 @@ export const SearchDialog: React.FC<SearchDialogProps> = (props) => {
       data: pageResults,
     },
     {
-      title: "Products",
+      title: "Projects",
       data: productResults,
     },
   ];
@@ -75,7 +75,7 @@ export const SearchDialog: React.FC<SearchDialogProps> = (props) => {
   return (
     <CommandDialog open={open} onOpenChange={onOpenChange}>
       <CommandInput
-        placeholder="Search links, pages, products..."
+        placeholder="Search links, pages, projects..."
         value={query}
         onValueChange={setQuery}
       />

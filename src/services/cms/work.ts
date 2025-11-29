@@ -1,20 +1,7 @@
-import { CacheTags } from "@/common/cache";
 import { TCMSWork } from "@/types/cms/work";
-import { cmsRequest } from "../common";
-import { fetchWorksQuery } from "./work.query";
-
-type WorksResponse = {
-  works: TCMSWork[];
-};
+import { mockWorks } from "@/data/mock-cms-data";
 
 export async function fetchWorks() {
-  try {
-    const data = await cmsRequest<WorksResponse>(fetchWorksQuery, {}, [
-      CacheTags.CMS_WORKS,
-    ]);
-    return data.works;
-  } catch (error) {
-    console.error("Error fetching works:", error);
-    return [];
-  }
+  // Return mock data instead of fetching from CMS
+  return mockWorks;
 }

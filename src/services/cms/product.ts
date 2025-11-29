@@ -1,20 +1,7 @@
-import { CacheTags } from "@/common/cache";
 import { TCMSProduct } from "@/types/cms/product";
-import { cmsRequest } from "../common";
-import { fetchProductsQuery } from "./product.query";
-
-type ProductsResponse = {
-  products: TCMSProduct[];
-};
+import { mockProducts } from "@/data/mock-cms-data";
 
 export async function fetchProducts() {
-  try {
-    const data = await cmsRequest<ProductsResponse>(fetchProductsQuery, {}, [
-      CacheTags.CMS_PRODUCTS,
-    ]);
-    return data.products;
-  } catch (error) {
-    console.error("Error fetching products:", error);
-    return [];
-  }
+  // Return mock data instead of fetching from CMS
+  return mockProducts;
 }

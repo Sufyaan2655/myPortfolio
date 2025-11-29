@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import React, { ReactNode } from "react";
 
 type Props = {
-  label: string;
+  label: string | ReactNode;
   children: ReactNode;
   wrapperClassname?: string;
 } & React.JSX.IntrinsicElements["section"];
@@ -17,7 +17,10 @@ const LabelSection = (props: Props) => {
         others.className
       )}
     >
-      <h2 className="mb-3 text-muted-foreground text-sm font-heading">
+      <h2 className={cn(
+        "mb-3 font-heading",
+        typeof label === "string" && "text-muted-foreground text-sm"
+      )}>
         {label}
       </h2>
       <div className={cn("bg-background rounded-2xl", wrapperClassname)}>

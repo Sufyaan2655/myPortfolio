@@ -58,7 +58,7 @@ const InitialState = (props: Props) => {
         <div className="px-3 py-2 text-xs text-muted-foreground space-y-1">
           <div className="flex items-center gap-2">
             <LuBookOpen />
-            <span>Try searching for pages, products, or links</span>
+            <span>Try searching for pages, projects, or links</span>
           </div>
           <div className="flex items-center gap-2">
             <LuTrendingUp />

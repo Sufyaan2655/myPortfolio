@@ -5,17 +5,17 @@ import {
   BiLogoWhatsapp,
 } from "react-icons/bi";
 import {
-  LuAtSign,
   LuFile,
   LuFileText,
   LuGlobe,
+  LuMail,
   LuPackage,
   LuSquareArrowOutUpRight,
 } from "react-icons/lu";
 
 export const icons = {
   resume: LuFile,
-  email: LuAtSign,
+  email: LuMail,
 
   // document
   page: LuFileText,

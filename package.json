@@ -1,5 +1,5 @@
 {
-  "name": "lusia",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "start": "next start --port 4050",
     "build": "next build",
     "lint": "next lint",
-    "remote": "npx localtunnel --port 4050 --subdomain lusia"
+    "remote": "npx localtunnel --port 4050 --subdomain portfolio"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.0",

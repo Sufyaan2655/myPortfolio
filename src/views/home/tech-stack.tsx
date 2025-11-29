@@ -19,13 +19,16 @@ const TechStack = (props: Props) => {
         {stackItems.map((item) => (
           <div
             key={item.id}
-            className="flex size-12 grow sm:grow-0 items-center justify-center border rounded-lg"
+            className="flex size-12 grow sm:grow-0 items-center justify-center border rounded-lg hover:bg-accent hover:border-primary hover:scale-110 transition-all duration-200 cursor-pointer group"
+            title={item.title}
           >
             <Image
               src={item.logo.url}
               alt={item.title}
               width={30}
               height={30}
+              unoptimized
+              className="group-hover:scale-110 transition-transform duration-200"
             />
           </div>
         ))}

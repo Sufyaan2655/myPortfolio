@@ -35,10 +35,31 @@ const generateImageObject = (
 ) => {
   if (!image) return undefined;
 
+  // Handle both absolute URLs and relative paths
+  let imageUrl = image.url;
+  let imagePathname = image.url;
+  
+  try {
+    if (image.url.startsWith('http://') || image.url.startsWith('https://')) {
+      const url = new URL(image.url);
+      imagePathname = url.pathname;
+      imageUrl = image.url;
+    } else {
+      // Relative path - use as is for pathname
+      imagePathname = image.url;
+      // Convert to absolute URL if BASE_URL is available
+      imageUrl = envConfig.BASE_URL ? `${envConfig.BASE_URL}${image.url}` : image.url;
+    }
+  } catch {
+    // If URL parsing fails, use the path as is
+    imagePathname = image.url;
+    imageUrl = envConfig.BASE_URL ? `${envConfig.BASE_URL}${image.url}` : image.url;
+  }
+
   return {
     "@type": "ImageObject" as const,
-    "@id": generateId.image(new URL(image.url).pathname),
-    url: image.url,
+    "@id": generateId.image(imagePathname),
+    url: imageUrl,
     width: `${image.width}px`,
     height: `${image.height}px`,
     name: image?.alt || name,

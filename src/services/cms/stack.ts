@@ -1,20 +1,7 @@
-import { CacheTags } from "@/common/cache";
 import { TCMSStack } from "@/types/cms/stack";
-import { cmsRequest } from "../common";
-import { fetchStacksQuery } from "./stack.query";
-
-type StacksResponse = {
-  stacks: TCMSStack[];
-};
+import { mockStacks } from "@/data/mock-cms-data";
 
 export async function fetchStacks() {
-  try {
-    const data = await cmsRequest<StacksResponse>(fetchStacksQuery, {}, [
-      CacheTags.CMS_STACKS,
-    ]);
-    return data.stacks;
-  } catch (error) {
-    console.error("Error fetching stacks:", error);
-    return [];
-  }
+  // Return mock data instead of fetching from CMS
+  return mockStacks;
 }

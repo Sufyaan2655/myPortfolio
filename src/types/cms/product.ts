@@ -14,5 +14,6 @@ export type TCMSProduct = {
   pricingType: CMSProductPricingTypeEnum;
   liveLink: string;
   sourceLink: string;
+  videoLink?: string;
   createdAt: string;
 };
