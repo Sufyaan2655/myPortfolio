@@ -36,7 +36,7 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm build
+        run: pnpm build:gh-pages
         env:
           GITHUB_PAGES: "true"
           # If repo is "username.github.io", use "" (empty string)
