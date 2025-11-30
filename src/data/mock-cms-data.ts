@@ -316,8 +316,8 @@ export const mockProfile: TCMSProfile = {
   callToActions: [
     {
       title: "View Resume",
-      href: "/resume",
-      newTab: false,
+      href: "/files/resume.pdf",
+      newTab: true,
       ref: "resume",
     },
     {
@@ -351,7 +351,7 @@ export const mockWorks: TCMSWork[] = [
   },
   {
     id: "2",
-    position: "Software Engineer",
+    position: "Aladdin Intern",
     company: "BlackRock",
     startYear: "2023",
     endYear: "2024",
@@ -367,7 +367,7 @@ export const mockWorks: TCMSWork[] = [
   },
   {
     id: "3",
-    position: "Software Engineering Intern",
+    position: "Technology & Operations Intern",
     company: "BlackRock",
     startYear: "2023",
     endYear: "2023",
