@@ -1,10 +1,13 @@
 import type { NextConfig } from "next";
 
 const isGithubPages = process.env.GITHUB_PAGES === "true";
+// If your repo is named "username.github.io", set this to empty string ""
+// Otherwise, set it to your repo name (e.g., "/myPortfolio")
+const githubPagesBasePath = process.env.GITHUB_PAGES_BASE_PATH || "/myPortfolio";
 
 const nextConfig: NextConfig = {
-  basePath: isGithubPages ? "/myPortfolio" : "",
-  assetPrefix: isGithubPages ? "/myPortfolio" : "",
+  basePath: isGithubPages ? githubPagesBasePath : "",
+  assetPrefix: isGithubPages ? githubPagesBasePath : "",
   output: isGithubPages ? "export" : undefined,
   trailingSlash: isGithubPages,
   images: {
