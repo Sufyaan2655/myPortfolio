@@ -1,4 +1,5 @@
 import LabelSection from "@/components/sections/label-section";
+import { getImagePath } from "@/helpers/image-path";
 import { TCMSStackItem } from "@/types/cms/stack";
 import Image from "next/image";
 
@@ -23,7 +24,7 @@ const TechStack = (props: Props) => {
             title={item.title}
           >
             <Image
-              src={item.logo.url}
+              src={getImagePath(item.logo.url)}
               alt={item.title}
               width={30}
               height={30}

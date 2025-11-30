@@ -1,6 +1,7 @@
 "use client";
 
 import { generateOrganizationSchema } from "@/helpers/schema-org";
+import { getImagePath } from "@/helpers/image-path";
 import { TCMSWork } from "@/types/cms/work";
 import Image from "next/image";
 import Link from "next/link";
@@ -31,7 +32,7 @@ const WorkCard = (props: Props) => {
             <div className="relative w-12 h-12 rounded-full bg-secondary flex items-center justify-center border-2 border-background z-10 hover:bg-secondary/80 transition-colors cursor-pointer">
               {data.logo && !imageError ? (
                 <Image
-                  src={data.logo.url}
+                  src={getImagePath(data.logo.url)}
                   alt={data.logo.alt || data.company}
                   width={data.logo.width || 32}
                   height={data.logo.height || 32}
@@ -48,7 +49,7 @@ const WorkCard = (props: Props) => {
           <div className="relative w-12 h-12 rounded-full bg-secondary flex items-center justify-center border-2 border-background z-10">
             {data.logo && !imageError ? (
               <Image
-                src={data.logo.url}
+                src={getImagePath(data.logo.url)}
                 alt={data.logo.alt || data.company}
                 width={data.logo.width || 32}
                 height={data.logo.height || 32}

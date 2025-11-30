@@ -6,6 +6,7 @@ import {
 } from "@/helpers/schema-org";
 import { CMSProductPricingTypeEnum, TCMSProduct } from "@/types/cms/product";
 import { projectTechStacks } from "@/data/mock-cms-data";
+import { getImagePath } from "@/helpers/image-path";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
@@ -40,7 +41,7 @@ const ProductCard = (props: Props) => {
     >
       <div className="w-full h-56 overflow-hidden transition-transform duration-200 group-hover:scale-105 flex items-center justify-center">
         <Image
-          src={product.logo.url}
+          src={getImagePath(product.logo.url)}
           alt={product.logo?.alt || product.title}
           width={400}
           height={224}

@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { generateServiceSchema } from "@/helpers/schema-org";
+import { getImagePath } from "@/helpers/image-path";
 import { TCMSStackItem } from "@/types/cms/stack";
 import Image from "next/image";
 import Script from "next/script";
@@ -14,7 +15,7 @@ const StackItemCard = (props: Props) => {
     <article key={data.id} className="flex items-start p-3 gap-x-4 rounded-xl">
       <div className="shrink-0 size-8 md:size-10 inline-flex items-center justify-center bg-secondary rounded-md">
         <Image
-          src={data.logo.url}
+          src={getImagePath(data.logo.url)}
           alt={data.logo?.alt || data.title}
           width={20}
           height={20}

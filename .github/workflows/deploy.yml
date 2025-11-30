@@ -42,6 +42,7 @@ jobs:
           # If repo is "username.github.io", use "" (empty string)
           # Otherwise, use "/repo-name" (e.g., "/myPortfolio")
           GITHUB_PAGES_BASE_PATH: "/myPortfolio"
+          NEXT_PUBLIC_BASE_PATH: "/myPortfolio"
           NEXT_PUBLIC_BASE_URL: "https://sufyaan2655.github.io/myPortfolio"
           NEXT_PUBLIC_GITHUB_USERNAME: ${{ secrets.NEXT_PUBLIC_GITHUB_USERNAME || 'Sufyaan2655' }}
 
