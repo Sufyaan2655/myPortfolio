@@ -43,7 +43,7 @@ const PinnedArticle = async (props: Props) => {
             No pinned article yet
           </h3>
           <p className="text-sm text-muted-foreground">
-            Once something insightful is ready, it'll show up here. Stay
+            Once something insightful is ready, it&apos;ll show up here. Stay
             curious!
           </p>
         </>
