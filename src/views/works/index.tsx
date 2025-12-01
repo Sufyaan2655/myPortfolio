@@ -20,8 +20,8 @@ const WorksView = async (props: Props) => {
       />
 
       <section className="container mb-16">
-        {worksRes.map((item) => (
-          <WorkCard data={item} key={item.id} />
+        {worksRes.map((item, index) => (
+          <WorkCard data={item} key={item.id} variant="timeline" isLast={index === worksRes.length - 1} />
         ))}
       </section>
       <RichTextSection htmlString={pageData?.content?.html ?? null} />

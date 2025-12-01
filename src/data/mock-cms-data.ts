@@ -29,9 +29,7 @@ export const mockPages: TCMSPage[] = [
     title: "Experience",
     description: "My professional work experience",
     slug: "works",
-    content: {
-      html: "<p>Here are some of the companies I've worked with and the roles I've held.</p>",
-    },
+    
     metaSeo: {
       title: "Experience - Portfolio",
       description: "My professional work experience",
@@ -59,23 +57,7 @@ export const mockPages: TCMSPage[] = [
     updatedAt: new Date().toISOString(),
     createdAt: new Date().toISOString(),
   },
-  {
-    title: "Stacks",
-    description: "Technologies and skills I work with",
-    slug: "stacks",
-    content: {
-      html: "<p>Here are the technologies and tools I'm proficient with.</p>",
-    },
-    metaSeo: {
-      title: "Stacks - Portfolio",
-      description: "Technologies and skills I work with",
-      index: true,
-      follow: true,
-    },
-    isCustomPage: false,
-    updatedAt: new Date().toISOString(),
-    createdAt: new Date().toISOString(),
-  },
+
 ];
 
 // Mock Profile Data
@@ -316,7 +298,7 @@ export const mockProfile: TCMSProfile = {
   callToActions: [
     {
       title: "View Resume",
-      href: "/files/resume.pdf",
+      href: "/files/Sufyaan Mohammed - Resume.pdf",
       newTab: true,
       ref: "resume",
     },
@@ -337,7 +319,7 @@ export const mockWorks: TCMSWork[] = [
     id: "1",
     position: "Software Engineering Fellow",
     company: "Headstarter AI",
-    startYear: "July 2024",
+    startYear: "August 2024",
     endYear: "September 2024",
     companyUrl: "https://headstarter.ai",
     logo: {
@@ -351,10 +333,10 @@ export const mockWorks: TCMSWork[] = [
   },
   {
     id: "2",
-    position: "Aladdin Intern",
+    position: "Aladdin Product Intern",
     company: "BlackRock",
-    startYear: "2023",
-    endYear: "2024",
+    startYear: "July 2024",
+    endYear: "August 2024",
     companyUrl: "https://blackrock.com",
     logo: {
       url: "/images/blackrock.png",
@@ -362,15 +344,15 @@ export const mockWorks: TCMSWork[] = [
       width: 48,
       height: 48,
     },
-    description: "Developed and maintained scalable financial technology solutions. Collaborated with cross-functional teams to deliver high-quality software products for investment management platforms.",
+    description: "Developed and familiarized with Aladdin, focusing on products like Risk Radar to solve financial data challenges. Designed and presented a conceptual Aladdin ecosystem product detailing system functionality and data flows.",
     linkedinUrl: "https://www.linkedin.com/company/blackrock",
   },
   {
     id: "3",
     position: "Technology & Operations Intern",
     company: "BlackRock",
-    startYear: "2023",
-    endYear: "2023",
+    startYear: "July 2023",
+    endYear: "August 2023",
     companyUrl: "https://blackrock.com",
     logo: {
       url: "/images/blackrock.png",
@@ -378,8 +360,24 @@ export const mockWorks: TCMSWork[] = [
       width: 48,
       height: 48,
     },
-    description: "Gained hands-on experience in software development within a leading financial services firm. Contributed to internal tools and applications while learning industry best practices.",
+    description: "Utilized Aladdin's analytics tools to process and interpret financial data for cross-functional projects. Mapped the Institutional Client Journey by translating business needs into structured workflows.",
     linkedinUrl: "https://www.linkedin.com/company/blackrock",
+  },
+  {
+    id: "4",
+    position: "Columbia E.N.G. Research Intern",
+    company: "Columbia University",
+    startYear: "June 2022",
+    endYear: "August 2022",
+    companyUrl: "https://www.columbia.edu",
+    logo: {
+      url: "/images/Columbia.png",
+      alt: "Columbia University",
+      width: 48,
+      height: 48,
+    },
+    description: "Collaborated with faculty and doctoral candidates on AI/ML applications in Civil and Mechanical Engineering. Developed Python simulations to model stress–strain behavior and predict failure thresholds.",
+    linkedinUrl: "https://www.linkedin.com/school/columbia-university",
   },
 ];
 
@@ -721,7 +719,7 @@ export const projectTechStacks: Record<string, string[]> = {
   "1": ["Next.js", "React.js", "TypeScript", "Node.js"], // Smart Transit System
   "2": ["React.js", "Next.js", "Firebase", "MySQL", "Prisma", "Node.js"], // Blogify
   "3": ["React.js", "Next.js", "Firebase", "Node.js", "Vercel"], // Inventory Management System
-  "4": ["Python", "OpenAI API", "Twilio", "MySQL", "OCR APIs"], // Parking Ticket Bot
+  "4": ["Python", "OpenAI API", "Twilio", "MySQL"], // Parking Ticket Bot
 };
 
 // Tech stack metadata mapping
@@ -794,11 +792,6 @@ const techStackMetadata: Record<string, { description: string; iconUrl: string; 
   "Twilio": {
     description: "Cloud communications platform for SMS, voice, and messaging",
     iconUrl: "https://api.iconify.design/simple-icons:twilio.svg?color=%23F22F46",
-    level: CMSStackSkillLevelEnum.INTERMEDIATE,
-  },
-  "OCR APIs": {
-    description: "Optical Character Recognition APIs for text extraction",
-    iconUrl: "https://api.iconify.design/simple-icons:tesseract.svg?color=%23000000",
     level: CMSStackSkillLevelEnum.INTERMEDIATE,
   },
 };
