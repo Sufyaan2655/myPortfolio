@@ -2,8 +2,8 @@
  * Helper function to get the correct image path for GitHub Pages
  * When basePath is set, we need to prefix relative paths with it
  * 
- * For static export, NEXT_PUBLIC_ env vars are embedded at build time.
- * We also check the window location as a fallback for runtime detection.
+ * For static export, we detect the basePath at runtime from the URL.
+ * This works in the browser by checking the current pathname.
  */
 export const getImagePath = (path: string): string => {
   // If it's already an absolute URL (http/https), return as is
@@ -11,16 +11,28 @@ export const getImagePath = (path: string): string => {
     return path;
   }
 
-  // Get basePath from public env var (embedded at build time for static export)
-  let basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  // Default basePath for GitHub Pages (can be overridden by env var or runtime detection)
+  let basePath = '/myPortfolio';
   
-  // Runtime fallback: detect basePath from current URL (client-side only)
-  if (!basePath && typeof window !== 'undefined') {
+  // Try to get from env var first (embedded at build time)
+  if (typeof process !== 'undefined' && process.env?.NEXT_PUBLIC_BASE_PATH) {
+    basePath = process.env.NEXT_PUBLIC_BASE_PATH;
+  }
+  
+  // Runtime detection from URL (works in browser) - this is the most reliable
+  if (typeof window !== 'undefined') {
     const pathname = window.location.pathname;
-    // Extract base path if URL contains /myPortfolio
-    const match = pathname.match(/^(\/myPortfolio)/);
-    if (match) {
-      basePath = match[1];
+    // Extract base path from URL (e.g., /myPortfolio from /myPortfolio/ or /myPortfolio/products)
+    const match = pathname.match(/^(\/[^\/]+)/);
+    if (match && match[1] !== '/') {
+      // Only use detected path if it's not just the root
+      // For GitHub Pages, the base path should be /myPortfolio
+      if (pathname.startsWith('/myPortfolio')) {
+        basePath = '/myPortfolio';
+      } else if (match[1] && match[1] !== '/') {
+        // Fallback: use first path segment as base path
+        basePath = match[1];
+      }
     }
   }
 
@@ -29,7 +41,7 @@ export const getImagePath = (path: string): string => {
     return path;
   }
 
-  // For GitHub Pages, prefix with basePath if it exists
+  // For GitHub Pages, prefix with basePath
   if (basePath) {
     // Ensure path starts with / and basePath doesn't end with /
     const cleanBasePath = basePath.endsWith('/') ? basePath.slice(0, -1) : basePath;
