@@ -16,7 +16,7 @@ export const mockPages: TCMSPage[] = [
       html: "<p>Welcome to my portfolio website. I'm a developer passionate about creating amazing web experiences.</p>",
     },
     metaSeo: {
-      title: "Home - Portfolio",
+      title: "Home",
       description: "Welcome to my portfolio website",
       index: true,
       follow: true,
@@ -31,7 +31,7 @@ export const mockPages: TCMSPage[] = [
     slug: "works",
     
     metaSeo: {
-      title: "Experience - Portfolio",
+      title: "Experience",
       description: "My professional work experience",
       index: true,
       follow: true,
@@ -48,7 +48,7 @@ export const mockPages: TCMSPage[] = [
       html: "<p>Check out the projects I've created.</p>",
     },
     metaSeo: {
-      title: "Projects - Portfolio",
+      title: "Projects",
       description: "Projects I've built",
       index: true,
       follow: true,
@@ -57,7 +57,23 @@ export const mockPages: TCMSPage[] = [
     updatedAt: new Date().toISOString(),
     createdAt: new Date().toISOString(),
   },
-
+  {
+    title: "Stacks",
+    description: "Technologies and skills I work with",
+    slug: "stacks",
+    content: {
+      html: "<p>Here are the technologies and tools I'm proficient with.</p>",
+    },
+    metaSeo: {
+      title: "Stacks",
+      description: "Technologies and skills I work with",
+      index: true,
+      follow: true,
+    },
+    isCustomPage: false,
+    updatedAt: new Date().toISOString(),
+    createdAt: new Date().toISOString(),
+  },
 ];
 
 // Mock Profile Data
@@ -337,7 +353,7 @@ export const mockWorks: TCMSWork[] = [
     company: "BlackRock",
     startYear: "July 2024",
     endYear: "August 2024",
-    companyUrl: "https://blackrock.com",
+    companyUrl: "https://www.blackrock.com/aladdin",
     logo: {
       url: "/images/blackrock.png",
       alt: "BlackRock",
@@ -353,7 +369,7 @@ export const mockWorks: TCMSWork[] = [
     company: "BlackRock",
     startYear: "July 2023",
     endYear: "August 2023",
-    companyUrl: "https://blackrock.com",
+    companyUrl: "https://www.blackrock.com/aladdin",
     logo: {
       url: "/images/blackrock.png",
       alt: "BlackRock",
@@ -369,7 +385,7 @@ export const mockWorks: TCMSWork[] = [
     company: "Columbia University",
     startYear: "June 2022",
     endYear: "August 2022",
-    companyUrl: "https://www.columbia.edu",
+    companyUrl: "https://www.engineering.columbia.edu/",
     logo: {
       url: "/images/Columbia.png",
       alt: "Columbia University",

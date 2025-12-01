@@ -14,10 +14,17 @@ export const metaSeoToMetadata = (
   const url =
     slug === "home" ? envConfig.BASE_URL : `${envConfig.BASE_URL}/${slug}`;
 
-  return deepMerge<Metadata, Metadata>(
-    {
-      title: metaSeo?.title,
-      description: metaSeo?.description,
+  // Get the page title as an absolute string (not a template)
+  const pageTitle = metaSeo?.title || page.title;
+  
+  // Merge root metadata first, then override with page-specific metadata
+  // This ensures page titles override root layout titles
+  // Set title as absolute string to prevent Next.js from applying templates
+  const pageMetadata: Metadata = {
+    title: pageTitle ? {
+      absolute: pageTitle,
+    } : undefined,
+    description: metaSeo?.description,
       alternates: {
         canonical: metaSeo?.canonicalUrl ?? url,
       },
@@ -49,7 +56,7 @@ export const metaSeoToMetadata = (
             }
           : undefined,
       },
-    },
-    metadata
-  );
+    };
+  
+  return deepMerge<Metadata, Metadata>(metadata, pageMetadata);
 };

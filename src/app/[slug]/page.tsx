@@ -61,8 +61,11 @@ export default OthersPage;
 export async function generateStaticParams() {
   const pages = await fetchPages();
 
+  // Exclude pages that have dedicated routes (stacks, works, products)
+  const dedicatedRoutes = ["stacks", "works", "products"];
+  
   return pages
-    .filter((page) => !page.isCustomPage)
+    .filter((page) => !page.isCustomPage && !dedicatedRoutes.includes(page.slug))
     .map((page) => ({
       slug: page.slug,
     }));

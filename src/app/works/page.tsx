@@ -48,5 +48,10 @@ export default WorksPage;
 export const generateMetadata = async () => {
   const pageRes = await fetchPage("works");
 
-  return metaSeoToMetadata(pageRes);
+  return {
+    ...metaSeoToMetadata(pageRes),
+    title: {
+      absolute: pageRes?.metaSeo?.title || pageRes?.title || "Experience",
+    },
+  };
 };

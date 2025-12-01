@@ -34,12 +34,12 @@ const Navigation = async (props: Props) => {
               <NavigationMenuLink
                 asChild
                 className={
-                  "px-3 py-2.5 inline-flex text-sm relative after:bottom-0 after:left-0 after:absolute after:w-full after:h-0 after:duration-300 after:bg-foreground/10 hover:after:h-0.5"
+                  "px-3 py-2.5 inline-flex text-sm relative after:bottom-0 after:left-0 after:absolute after:w-full after:h-0 after:duration-300 after:bg-foreground/10 hover:after:h-0.5 transition-all duration-200"
                 }
               >
                 <NavLink
                   href={item.path}
-                  className="[&.active]:after:h-0.5 [&.active]:after:bg-foreground font-heading"
+                  className="[&.active]:after:h-0.5 [&.active]:after:bg-foreground font-heading transition-colors duration-200"
                 >
                   {item.title}
                 </NavLink>

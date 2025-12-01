@@ -29,7 +29,7 @@ export default async function RootLayout(props: Props) {
   const { children } = props;
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
         className={`${inter.variable} ${outfit.variable} antialiased pb-20`}
         suppressHydrationWarning
@@ -53,9 +53,5 @@ export const generateMetadata = async (): Promise<Metadata> => {
     authors: { name: profileRes?.name },
     category: "Portfolio",
     creator: profileRes?.name,
-    title: {
-      template: `%s - ${profileRes?.name}`,
-      default: profileRes?.name ?? "",
-    },
   });
 };
